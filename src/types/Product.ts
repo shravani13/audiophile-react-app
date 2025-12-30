@@ -5,9 +5,9 @@ export interface ProductImage {
   }
   
   export interface GalleryImage{
-    position: number;
-    cloudinaryPublicId: string;
-    cloudinaryVersion: string;
+    desktop: string;
+    tablet: string;
+    mobile: string;
   }
   
   export interface IncludedItem {

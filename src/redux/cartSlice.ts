@@ -1,6 +1,6 @@
 import { createSelector, createSlice } from "@reduxjs/toolkit";
 import type { PayloadAction } from "@reduxjs/toolkit";
-import type { ShoppingCart, ShoppingCartResponseWrapper, ShoppingCartItem, ShoppingCartRequestWrapper } from "../types/Cart";
+import type { ShoppingCartResponseWrapper, ShoppingCartItem, ShoppingCartRequestWrapper } from "../types/Cart";
 import type { RootState } from "./appStore";
 import { apiSlice } from "./apiSlice";
 

@@ -18,7 +18,7 @@ const persistedCartReducer = persistReducer(persistConfig,cartReducer);
 const listenerMiddleware = createListenerMiddleware();
 listenerMiddleware.startListening({
     actionCreator: login,
-    effect: async (action, listenerApi) => {
+    effect: async (_action, listenerApi) => {
         const guestId = getCookie('guestId');
         if(guestId){
             try{

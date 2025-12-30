@@ -1,4 +1,5 @@
-import type { IdTokenClaims } from "@azure/msal-browser";
+// Local type definition for IdTokenClaims (replacing @azure/msal-browser import)
+type IdTokenClaims = Record<string, string | number | object>;
 
 /**
  * Populate claims table with appropriate description

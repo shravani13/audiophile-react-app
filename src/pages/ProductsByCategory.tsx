@@ -10,9 +10,7 @@ export const ProductsByCategory = () => {
    
     const {data,
         isLoading,
-        isSuccess,
-        isError,
-        error
+        isError
     } = useGetProductsByCategoryQuery(category!);
     //const [productsDataState, setProductsDataState] = useState<ProductsByCategoryResponse>();
     

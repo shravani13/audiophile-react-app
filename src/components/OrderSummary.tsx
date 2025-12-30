@@ -22,12 +22,17 @@ export const OrderSummary = () => {
         const data:MergedCartItem[] = cart?.cart?.cart?.items?.map(item=>{
             const product = productsData?.products?.find(product=>product.id === item.productId);
             if(!product) return null;
+            // Derive imageUrl from images array (for API data) or use imageUrl property (for mock data)
+            const cartImage = product.images?.find(image => image.imageType.toLowerCase() === 'thumbnail');
+            const imageUrl = cartImage 
+                ? `https://res.cloudinary.com/dzvbnmljo/image/upload/${cartImage.cloudinaryVersion}/${cartImage.cloudinaryPublicId}.jpg`
+                : (product as any).imageUrl || '';
             return {
                 productId: product.id,
                 name: product.name,
                 quantity: item.quantity,
                 price: product.price,
-                imageUrl: product.imageUrl
+                imageUrl: imageUrl
             } as MergedCartItem
         }).filter((item):item is MergedCartItem => item !== null);
         setMergedCartItems(data);

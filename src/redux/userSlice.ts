@@ -8,10 +8,10 @@ type User ={
     username: string,
     token: string
 }
-type LoginUser = {
-    username: string,
-    password: string
-}
+// type LoginUser = {
+//     username: string,
+//     password: string
+// }
 
 const initialState: { user: User | null; isAuthenticated: boolean } = {
     user: null,

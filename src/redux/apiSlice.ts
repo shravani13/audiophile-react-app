@@ -20,7 +20,7 @@ export const apiSlice = createApi({
         }
     }),
     
-    endpoints: (builder) => ({
+    endpoints: () => ({
     }),
     tagTypes: ['Cart',"Product"],
     keepUnusedDataFor: 86400
