@@ -1,7 +1,7 @@
 import type { AppDispatch, RootState } from "../redux/appStore"
 import { useDispatch, useSelector } from "react-redux"
 import { Link } from "react-router"
-import { clearCart, closeCart, selectCartQuantity, selectTotalPrice, selectCart, selectCartStatus, selectCartOpenStatus, useDeleteCartMutation, useGetCartQuery } from "../redux/cartSlice"
+import { clearCart, closeCart, selectCartQuantity, selectTotalPrice, selectCart, selectCartOpenStatus } from "../redux/cartSlice"
 import { CartItem } from "./CartItem"
 //import { useEffect } from "react"
 import { formatCurrency } from "../utils/formatCurrency"

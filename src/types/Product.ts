@@ -28,6 +28,9 @@ export interface ProductImage {
     images: ProductImage[];
     gallery: GalleryImage[];
     includedItems: IncludedItem[];
+    // Optional properties for mock data compatibility
+    cartImage?: string | null;
+    imageUrl?: string;
   }
   
   // Response is an array of products
