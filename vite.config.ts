@@ -7,5 +7,9 @@ export default defineConfig({
   plugins: [react(), tailwindcss()],
   define: {
     global: 'window' //for aws-amplify compatibility
+  },
+  server: {
+    host: '0.0.0.0', // Allow external connections
+    port: 5173
   }
 })
