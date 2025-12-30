@@ -4,17 +4,15 @@ import { incrementQuantity, openCart, selectCart, useCreateOrUpdateCartMutation 
 import type { AppDispatch } from "../redux/appStore";
 import {  useGetProductByIdQuery } from "../redux/productSlice";
 import type { Product } from "../types/Product";
-import { selectUser } from "../redux/userSlice";
 import { ProductThumbnailImage } from "../components/Product/ProductThumbnailImage";
 
 export const ProductDetails = () => {
-    const {category,productId} = useParams();
+    const {productId} = useParams();
 
     const cart = useSelector(selectCart);
-    const user = useSelector(selectUser);
    
-    const [createOrUpdateCart, {isLoading}] = useCreateOrUpdateCartMutation();
-    const {data, isLoading:isProductLoading, isError, error} 
+    const [createOrUpdateCart] = useCreateOrUpdateCartMutation();
+    const {data, isLoading:isProductLoading, isError} 
     = useGetProductByIdQuery(productId!)
     
     const dispatch = useDispatch<AppDispatch>();
