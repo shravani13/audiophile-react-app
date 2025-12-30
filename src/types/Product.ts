@@ -25,7 +25,7 @@ export interface ProductImage {
     quantity: number;
     features: string;
     category: string;
-    images: ProductImage[];
+    images?: ProductImage[];
     gallery: GalleryImage[];
     includedItems: IncludedItem[];
     // Optional properties for mock data compatibility

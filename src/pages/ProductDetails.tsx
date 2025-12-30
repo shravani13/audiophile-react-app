@@ -18,8 +18,10 @@ export const ProductDetails = () => {
     const dispatch = useDispatch<AppDispatch>();
 
     const handleAddToCart = (product:Product) => {
-        const cartImage = product.images.find(image => image.imageType.toLowerCase() === 'thumbnail');
-        const imageUrl = `https://res.cloudinary.com/dzvbnmljo/image/upload/${cartImage?.cloudinaryVersion}/${cartImage?.cloudinaryPublicId}.jpg`;
+        const cartImage = product.images?.find(image => image.imageType.toLowerCase() === 'thumbnail');
+        const imageUrl = cartImage 
+            ? `https://res.cloudinary.com/dzvbnmljo/image/upload/${cartImage.cloudinaryVersion}/${cartImage.cloudinaryPublicId}.jpg`
+            : product.imageUrl || '';
         dispatch(incrementQuantity(product.id,product.name,product.price,1,imageUrl))
         
         createOrUpdateCart({shoppingCartItem : {productId:product.id, productName:product.name, 
