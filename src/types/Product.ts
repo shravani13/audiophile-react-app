@@ -31,6 +31,8 @@ export interface ProductImage {
     // Optional properties for mock data compatibility
     cartImage?: string | null;
     imageUrl?: string;
+    image?: GalleryImage;
+    categoryImage?: GalleryImage;
   }
   
   // Response is an array of products
