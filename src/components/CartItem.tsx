@@ -14,7 +14,7 @@ type CartItemProps = {
 }
 export const CartItem = ({productId, productName, quantity,price, imageUrl}:CartItemProps) => {
     const dispatch = useDispatch<AppDispatch>();
-    const[createOrUpdateCart, {isLoading}] = useCreateOrUpdateCartMutation();
+    const[createOrUpdateCart] = useCreateOrUpdateCartMutation();
     const debounceTimerRef = useRef<number | null>(null);
     const pendingUpdateRef = useRef<ShoppingCartRequestWrapper | null>(null);
     const DEBOUNCE_DELAY = 500; // milliseconds

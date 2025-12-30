@@ -3,10 +3,10 @@ import { useDispatch, useSelector } from "react-redux"
 import { Link } from "react-router"
 import { clearCart, closeCart, selectCartQuantity, selectTotalPrice, selectCart, selectCartStatus, selectCartOpenStatus, useDeleteCartMutation, useGetCartQuery } from "../redux/cartSlice"
 import { CartItem } from "./CartItem"
-import { useEffect } from "react"
+//import { useEffect } from "react"
 import { formatCurrency } from "../utils/formatCurrency"
 import { EmptyCart } from "./EmptyCart"
-import { selectUser, selectUserAuthenticatedStatus } from "../redux/userSlice"
+//import { selectUser, selectUserAuthenticatedStatus } from "../redux/userSlice"
 
 
 export const Cart = () => {
@@ -14,15 +14,15 @@ export const Cart = () => {
     const dispatch = useDispatch<AppDispatch>();
 
     const cart = useSelector((state:RootState) => selectCart(state));
-    const cartStatus = useSelector((state:RootState) => selectCartStatus(state));
+    //const cartStatus = useSelector((state:RootState) => selectCartStatus(state));
     const isCartOpen = useSelector((state:RootState) => selectCartOpenStatus(state));
     const totalQuantity = useSelector(selectCartQuantity);
     const totalPrice = useSelector(selectTotalPrice);
-    const [deleteCart, {isLoading}] = useDeleteCartMutation();
+    //const [deleteCart, {isLoading}] = useDeleteCartMutation();
    
 
 
-    const {data} = useGetCartQuery();
+    //const {data} = useGetCartQuery();
 
     const handleDeleteCart = () => {
         dispatch(clearCart());
